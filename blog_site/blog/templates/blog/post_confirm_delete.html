@@ -3,7 +3,11 @@
 {% block content %}
 
 <div class="ui segment">
-    <h2>Welcome to about page!</h2>
+    <form class="ui form" method="post">
+        {% csrf_token %}
+        <p>Do you want to delete {{ object }}?</p>
+        <input type="submit" class="ui negative button" value="Delete">
+    </form>
 </div>
 
 {% endblock %}

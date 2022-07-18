@@ -14,7 +14,7 @@
 
         <form class ='ui form' action="{% url 'login' %}" method="POST">
             {% csrf_token %}
-            {% form.as_p %}
+            {{ form.as_p }}
             <input class="ui positive button" type="submit" value="Login">
             <input type="hidden" name="next" value="{{next}}">
         </form>

@@ -2,8 +2,18 @@
 
 {% block content %}
 
-<div class="ui segment">
-    <h2>Welcome to about page!</h2>
+<div class="ui segments">
+    <div class="ui segment">
+        <h1>New post</h1>
+    </div>
+    <div class="ui segment">
+        <form class="ui form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="ui positive button" value="Save">
+        </form>
+    </div>
 </div>
 
+<script>var editor = new MediumEditor('.editable');</script>
 {% endblock %}

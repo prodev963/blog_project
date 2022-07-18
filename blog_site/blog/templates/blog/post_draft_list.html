@@ -2,8 +2,22 @@
 
 {% block content %}
 
-<div class="ui segment">
-    <h2>Welcome to about page!</h2>
+<div class="ui segments">
+    <div class="ui segment">
+        <h2>Welcome to drafts page!</h2>
+    </div>
+    <div class="ui segment">
+        {% for post in posts %}
+
+        {% if not post.published_date %}
+        <div class="ui segment">
+            <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+         </div>
+        {% endif %}
+
+        {% endfor %}
+    </div>
+    
 </div>
 
 {% endblock %}

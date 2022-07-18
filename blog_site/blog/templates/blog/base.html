@@ -34,8 +34,9 @@
       <div class="right menu">
         {% if user.is_authenticated %}
           <a class="item" href="{% url 'post_new' %}">NewPost</a>
-          <a class="item" href="{% url 'post_draft_list' %}">Drafts</a>                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          <a href="">Welcome {{user.username}}</a>
+          <a class="item" href="{% url 'post_draft_list' %}">Drafts</a>                
+          <a class="item" href="{% url 'logout' %}">Logout</a>
+          <a class="item" href="">Welcome {{user.username}}</a>
         {% else %}
            <a class="item" href="{% url 'login' %}"><i class="sign in alternate icon"></i>Login</a>
         {% endif %}
@@ -51,6 +52,7 @@
                 {% endblock %}
               </div>
               <div class="col-3">
+              <div class="ui vertical rectangle test ad" data-text="Vertical Rectangle"></div>
               <div class="ui vertical rectangle test ad" data-text="Vertical Rectangle"></div>
               </div>
             </div>
