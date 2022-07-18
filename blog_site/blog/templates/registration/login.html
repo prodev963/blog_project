@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<div class="ui segments">
+    <div class="ui segment">
+        <h2>Login to your page!</h2>
+        <p>You should be superuser</p>
+    </div>
+    <div class="ui segment">
+        {% if form.errors %}
+        <p>Your username and password does not match! </p>
+        {% endif %}
+
+        <form class ='ui form' action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            {% form.as_p %}
+            <input class="ui positive button" type="submit" value="Login">
+            <input type="hidden" name="next" value="{{next}}">
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
